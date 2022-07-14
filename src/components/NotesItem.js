@@ -2,7 +2,7 @@ import React from "react";
 import NotesItemBody from "./NotesItemBody";
 import ActionButton from "./ActionButton";
 
-function NotesItem({ title, body, createdAt ,id, onDelete, onArchive }) {
+function NotesItem({ title, body, createdAt ,id, onDelete }) {
     return (
         <>
             <div className="note-item">
@@ -11,7 +11,7 @@ function NotesItem({ title, body, createdAt ,id, onDelete, onArchive }) {
                 </div>
                
                 <div className="note-footer">
-                    <ActionButton id={id} onDelete={onDelete} onArchive={onArchive} />
+                    <ActionButton id={id} onDelete={onDelete} />
                 </div>
             </div>
            

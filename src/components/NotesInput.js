@@ -8,7 +8,7 @@ class NotesInput extends React.Component {
         this.state = {
             title: '',
             body: '',
-            createdAt: Date(),
+            createdAt: new Date().toISOString(),
             archived: false
         }
 

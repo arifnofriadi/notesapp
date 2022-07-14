@@ -1,7 +1,7 @@
 import React from "react";
 import NotesItem from "./NotesItem";
 
-function NotesList({ notes, onDelete }) {
+function NotesList({ notes, onDelete, }) {
     return (
         <div className="flex m-auto">
             {

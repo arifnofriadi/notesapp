@@ -3,7 +3,7 @@ import NotesHeader from './components/NotesHeader';
 import NotesList from './components/NotesList';
 import { getData } from './utils/data';
 import NotesInput from './components/NotesInput';
-import NotesArchive from './components/NotesArchive';
+import Swal from 'sweetalert2';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,12 +14,20 @@ class App extends React.Component {
   
     this.onDeleteHandler = this.onDeleteHandler.bind(this);
     this.onAddNoteHandler = this.onAddNoteHandler.bind(this);
-    this.onArchiveHandler = this.onArchiveHandler.bind(this);
   }
   
   onDeleteHandler(id) {
-    const notes = this.state.notes.filter(note => note.id !== id);
-    this.setState({ notes });
+    Swal.fire({
+      title: "Kamu yakin ingin menghapus catatan?",
+      showCancelButton: true,
+      confirmButtonText: "Hapus",
+    }).then((result) => {
+      if(result.isConfirmed) {
+        const notes = this.state.notes.filter(note => note.id !== id);
+        this.setState({ notes });
+        Swal.fire("Catatan dihapus", "", "success");
+      } 
+    });
   }
 
   onAddNoteHandler({ title, body, createdAt, archived }) {
@@ -39,18 +47,6 @@ class App extends React.Component {
     });
   }
 
-  onArchiveHandler(id) {
-    const data = this.state.notes;
-    const newData = data.findIndex(note => note.id === id)
-    data[newData].archived = true
-    this.setState((prevState) => {
-      return {
-        ...prevState,
-        notes: data
-      }
-    })
-  }
-
   render () {
     return (
       <div className="App">
@@ -60,11 +56,7 @@ class App extends React.Component {
           <NotesInput addNote={this.onAddNoteHandler}/>
           <h1>Daftar Catatan</h1>
           <div className="cards">
-            <NotesList notes={this.state.notes}  onDelete={this.onDeleteHandler}/>
-          </div>
-          <h1>Arsip</h1>
-          <div className='cards'>
-            <NotesArchive notes={this.state.notes} onArchive={this.onArchiveHandler} />
+            <NotesList notes={this.state.notes}  onDelete={this.onDeleteHandler} />
           </div>
         </div>
       </div>
