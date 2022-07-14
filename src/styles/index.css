@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.flex {
+  display: flex;
+  display: -moz-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+}
+
+.m-auto { margin: auto; }
+
+.underline { border-bottom: 2px solid #C1D9E8; }
+
+.navbar{
+  background: #027D8D;
+  padding: 5px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
+.navbar img {
+  width: 50px;
+  height: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.navbar h1 {
+  font-family:'Queen Athena';
+  color: wheat;
+  margin-left: 10px;
+  margin-top: 40px;
+  font-size: 40px;
+}
+
+.subApp {
+  padding: 2rem;
+}
+
+.cards {
+  max-width: 1200px;
+  background: #C1D9E8;
+  margin: 0 auto;
+  display: flex;
+  grid-gap: 1rem;
+  padding: 2rem;
+  height: 20rem;
+  overflow: scroll;
+}
+
+.note-item {
+  background-color: white;
+  color: #333333;
+  padding: 1rem;
+  height: 280px;
+  width: 300px;
+  margin-right: 10px;
+  margin-left: 10px;
+  min-height: 100%;
+}
+
+.note-body {
+  min-height: 90%;
+  height: 250px;
+  overflow: auto;
+}
+
+.note-footer {
+  margin-top: 1rem;
+
+}
+
+.action-button {
+  width: 280px;
+  height: 40px;
+  background: #C1D9E8;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+
+.action-button:hover {
+  transform: scale(1.1);
+}
+
+.action-button span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #027D8D;
+  color: #F1F1F1;
+  text-align: center;
+  line-height: 40px;
+  z-index: 999;
+  transition: 0.4s linear;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.action-button:hover span {
+  transform: translate(-100%);
+  transition-delay: 0.3s;
+}
+
+.action-button button {
+ background: none;
+ border: none;
+ outline: none;
+ flex: 1;
+ cursor: pointer;
+ text-align: center;
+}
+
+.action-button:hover a {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.action-button button img {
+  width: 20px;
+}
+
+.form-input {
+  background: #C1D9E8;
+  max-width: 1200px;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.input-container {
+  margin-top: 10px;
+}
+
+.input-container .text-input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  outline: none;
+  border-radius: 2px;
+  border: none;
+}
+
+.input-container .text-input:focus{
+  color: #027D8D;
+  border-bottom: 2px solid #027D8D;
+}
+
+.input-container .button-add {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background: #027D8D;
+  color: white;
+  font-size: 16px;
+}
+
+.input-container .limit-count{
+  color: red;
+  display: none;
+}
+
+.input-container .text-input:focus ~ .limit-count {
+  display: contents;
+}
+
