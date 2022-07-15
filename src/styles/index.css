@@ -182,3 +182,25 @@ code {
   display: contents;
 }
 
+.footbar {
+  border-top: 1px solid #027D8D;
+  padding: 5px;
+  width: 100%;
+  color: #333333;
+  position: relative;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center span:nth-last-child(1) {
+  color: black;
+  font-weight: 500;
+}
+
+.author  a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #027D8D;
+}

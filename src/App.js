@@ -1,5 +1,6 @@
 import React from 'react';
 import NotesHeader from './components/NotesHeader';
+import NotesFooter from './components/NotesFooter';
 import NotesList from './components/NotesList';
 import { getData } from './utils/data';
 import NotesInput from './components/NotesInput';
@@ -59,6 +60,7 @@ class App extends React.Component {
             <NotesList notes={this.state.notes}  onDelete={this.onDeleteHandler} />
           </div>
         </div>
+        <NotesFooter />
       </div>
     );
   }
