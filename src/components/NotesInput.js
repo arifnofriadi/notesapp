@@ -57,12 +57,12 @@ class NotesInput extends React.Component {
             <form className='form-input' onSubmit={this.onSubmitEventHandler}>
                 <div className='input-container'>
                     <label className='label'>Judul</label>
-                    <input type="text" id='title' className='text-input' autoComplete='off' placeholder='Masukkan judul' value={this.state.title} onChange={this.onTitleChangeEventHandler} maxLength="50" required/>
+                    <input type="text" id='title' className='text-input' autoComplete='off' placeholder='Masukkan judul' value={this.state.title} onChange={this.onTitleChangeEventHandler} maxLength="50" required />
                     <small className='limit-count'>Sisa karakter {maxLength - this.state.title.length}</small>
                 </div>
                 <div className='input-container'>
                     <label className='label'>Isi</label>
-                    <textarea type='text' id='body' className='text-input' placeholder='Masukkan catatan' value={this.state.body} onChange={this.onBodyChangeEventHandler} required></textarea>
+                    <textarea type='text' id='body' className='text-input' placeholder='Masukkan catatan' value={this.state.body} onChange={this.onBodyChangeEventHandler} required ></textarea>
                 </div>
                 <div className='input-container'>
                     <button className='button-add' type='submit' onClick={this.showAlert}>Simpan</button>

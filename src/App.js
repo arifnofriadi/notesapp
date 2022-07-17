@@ -5,6 +5,7 @@ import NotesList from './components/NotesList';
 import { getData } from './utils/data';
 import NotesInput from './components/NotesInput';
 import Swal from 'sweetalert2';
+import autoBind from 'auto-bind';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,8 +14,9 @@ class App extends React.Component {
       notes: getData(),
     }
   
-    this.onDeleteHandler = this.onDeleteHandler.bind(this);
-    this.onAddNoteHandler = this.onAddNoteHandler.bind(this);
+    autoBind(this);
+    // this.onDeleteHandler = this.onDeleteHandler.bind(this);
+    // this.onAddNoteHandler = this.onAddNoteHandler.bind(this);
   }
   
   onDeleteHandler(id) {
